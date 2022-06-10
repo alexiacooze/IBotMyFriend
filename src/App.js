@@ -8,7 +8,7 @@ import iPhone from "./assets/iphone-mockup.png";
 class App extends Component {
   state = {
     chatHistory: [],
-    isTyping: null,
+    isTyping: false,
   };
 
   // Handling Data
@@ -24,6 +24,7 @@ class App extends Component {
           ...this.state.chatHistory,
           { message: message, reply: response.data.output },
         ],
+        isTyping: true,
       });
     });
   };
@@ -55,7 +56,10 @@ class App extends Component {
             />
           </div> */}
           <MessageForm handleSubmit={this.handleSubmit} />
-          <MessageList chatHistory={this.state.chatHistory} />
+          <MessageList
+            chatHistory={this.state.chatHistory}
+            isTyping={this.state.isTyping}
+          />
         </div>
       </div>
     );
