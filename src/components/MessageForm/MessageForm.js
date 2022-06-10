@@ -13,6 +13,12 @@ class MessageForm extends Component {
     console.log(event.target.value);
   };
 
+  handleReset = () => {
+    this.setState({
+      message: "",
+    });
+  };
+
   render() {
     return (
       <div>
@@ -20,7 +26,7 @@ class MessageForm extends Component {
           className="messageForm"
           onSubmit={(event) => {
             this.props.handleSubmit(event, this.state.message);
-            this.props.resetState();
+            this.handleReset();
           }}
         >
           <input

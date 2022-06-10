@@ -9,7 +9,6 @@ class App extends Component {
   state = {
     chatHistory: [],
     isTyping: null,
-    message: "",
   };
 
   // Handling Data
@@ -55,10 +54,7 @@ class App extends Component {
               alt="iPhone Mockup"
             />
           </div> */}
-          <MessageForm
-            handleSubmit={this.handleSubmit}
-            resetState={this.resetState}
-          />
+          <MessageForm handleSubmit={this.handleSubmit} />
           <MessageList chatHistory={this.state.chatHistory} />
         </div>
       </div>
