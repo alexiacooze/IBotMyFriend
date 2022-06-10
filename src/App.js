@@ -24,6 +24,7 @@ class App extends Component {
           ...this.state.chatHistory,
           { message: message, reply: response.data.output },
         ],
+        message: "",
       });
     });
   };
@@ -55,7 +56,7 @@ class App extends Component {
             />
           </div> */}
           <MessageForm handleSubmit={this.handleSubmit} />
-          <MessageList />
+          <MessageList chatHistory={this.state.chatHistory} />
         </div>
       </div>
     );
