@@ -7,9 +7,13 @@ function MessageList({ chatHistory }) {
     <div className="messageList">
       {chatHistory.map((text, index) => {
         return (
-          <div key={index}>
-            <p>{text.message}</p>
-            <p>{text.reply}</p>
+          <div className="message" key={index}>
+            <div className="message__userContainer">
+              <p className="message__user">{text.message}</p>
+            </div>
+            <div className="botContainer">
+              <p className="message__bot">{text.reply}</p>
+            </div>
           </div>
         );
       })}

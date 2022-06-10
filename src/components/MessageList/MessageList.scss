@@ -2,10 +2,43 @@
 @use "../../styles/partials/variables" as *;
 
 .messageList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 375px;
   height: 578px;
-  padding: 12px;
-  border: 1px solid red;
+  padding: $p2;
   position: absolute;
   top: 115px;
+  overflow: auto;
+}
+
+.message {
+  width: 100%;
+
+  &__userContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__user {
+    width: fit-content;
+    background-color: $blue;
+    border-radius: 32px;
+    color: #fff;
+    padding: $p1 $p2;
+    margin-bottom: 25px;
+  }
+
+  &__botContainer {
+  }
+
+  &__bot {
+    width: fit-content;
+    background-color: $reply;
+    border-radius: 32px;
+    color: $black;
+    padding: $p1 $p2;
+    margin-bottom: 25px;
+  }
 }
