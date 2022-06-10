@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     chatHistory: [],
     isTyping: null,
+    message: "",
   };
 
   // Handling Data
@@ -24,7 +25,6 @@ class App extends Component {
           ...this.state.chatHistory,
           { message: message, reply: response.data.output },
         ],
-        message: "",
       });
     });
   };
@@ -55,7 +55,10 @@ class App extends Component {
               alt="iPhone Mockup"
             />
           </div> */}
-          <MessageForm handleSubmit={this.handleSubmit} />
+          <MessageForm
+            handleSubmit={this.handleSubmit}
+            resetState={this.resetState}
+          />
           <MessageList chatHistory={this.state.chatHistory} />
         </div>
       </div>

@@ -20,6 +20,7 @@ class MessageForm extends Component {
           className="messageForm"
           onSubmit={(event) => {
             this.props.handleSubmit(event, this.state.message);
+            this.props.resetState();
           }}
         >
           <input
