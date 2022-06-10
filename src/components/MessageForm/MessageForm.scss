@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.messageForm {
+  position: absolute;
+  bottom: 80px;
+  right: 8px;
+
+  &__input {
+    height: 34px;
+    width: 250px;
+    padding: 12px;
+    padding-right: 36px;
+    border-radius: 32px;
+    border: 0.5px solid $ui-text;
+  }
+
+  &__input::placeholder {
+    color: $ui-text;
+  }
+
+  &__send {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+  }
+}

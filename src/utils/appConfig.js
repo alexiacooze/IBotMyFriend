@@ -4,7 +4,6 @@ const API_URL = "http://localhost:8080/";
 
 const cleverAPI = {
   cleverReply: (input) => {
-    // return axios.post(`${API_URL}${input}`);
     return axios.post(`${API_URL}${input}`);
   },
 };

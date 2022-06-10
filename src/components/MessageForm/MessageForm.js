@@ -1,21 +1,43 @@
 import "./MessageForm.scss";
+// import React from "react";
+import { Component } from "react";
+import sendIcon from "../../assets/send-icon.svg";
 
-import React from "react";
+class MessageForm extends Component {
+  state = {
+    message: "",
+  };
 
-function MessageForm() {
-  return (
-    <div>
-      <form className="messageForm">
-        <input
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(event.target.value);
+  };
+
+  render() {
+    return (
+      <div>
+        <form
           className="messageForm"
-          type="text"
-          name="message"
-          id="message"
-          placeholder="iMessage"
-        ></input>
-      </form>
-    </div>
-  );
+          onSubmit={(event) => {
+            this.props.handleSubmit(event, this.state.message);
+          }}
+        >
+          <input
+            className="messageForm__input"
+            type="text"
+            name="message"
+            id="message"
+            placeholder="iMessage"
+            onChange={this.handleChange}
+            value={this.state.message}
+          ></input>
+          <button className="messageForm__send" type="submit">
+            <img src={sendIcon} alt="Send Icon"></img>
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default MessageForm;
