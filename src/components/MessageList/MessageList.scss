@@ -3,18 +3,20 @@
 
 .messageList {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-content: flex-start;
   flex-wrap: wrap;
   width: 375px;
   height: 578px;
   padding: $p2;
   position: absolute;
   top: 115px;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .message {
   width: 100%;
+  height: fit-content;
 
   &__userContainer {
     display: flex;
