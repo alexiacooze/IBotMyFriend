@@ -34,6 +34,7 @@ class MessageForm extends Component {
             name="message"
             id="message"
             placeholder="iMessage"
+            autocomplete="off"
             onChange={this.handleChange}
             value={this.state.message}
           ></input>
