@@ -1,10 +1,11 @@
 import "./MessageList.scss";
 
 import React from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
 
 function MessageList({ chatHistory, isTyping }) {
   return (
-    <div className="messageList">
+    <ScrollToBottom className="messageList">
       {chatHistory.map((text, index) => {
         return (
           <div className="message" key={index}>
@@ -18,7 +19,7 @@ function MessageList({ chatHistory, isTyping }) {
           </div>
         );
       })}
-    </div>
+    </ScrollToBottom>
   );
 }
 
