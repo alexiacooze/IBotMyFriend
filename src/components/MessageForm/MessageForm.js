@@ -1,5 +1,4 @@
 import "./MessageForm.scss";
-// import React from "react";
 import { Component } from "react";
 import sendIcon from "../../assets/send-icon.svg";
 
